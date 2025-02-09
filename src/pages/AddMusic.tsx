@@ -2,51 +2,51 @@ import { useEffect, } from "react";
 import { useNavigate } from "react-router-dom";
 import { AddTaskButton, Container, StyledInput } from "../styles";
 import {TopBar } from "../components";
-import { ColorPalette } from "../theme/themeConfig";
 import InputThemeProvider from "../contexts/InputThemeProvider";
 import { Formik } from 'formik';
+import FileUpload from "../components/FileUpload";
 
-const AddPassword = () => {
+
+const AddMusic = () => {
   
   const n = useNavigate();
 
   useEffect(() => {
-    document.title = "Vault - Add Password";
+    document.title = "Vault - Add Music";
   }, []);
 
 
   return (
     <>
-      <TopBar title="Add New Task" />
+      <TopBar title="Add New Music" />
       <Container>
         {/* fix for input colors */}
         <Formik
-          initialValues={{ appName: '', username:'',password: '' }}
+          initialValues={{ title: '', singer:'', composer: '', }}
           validate={values => {
             const errors:any = {};
-            if (!values.appName) {
-              errors.appName = 'Required';
+            if (!values.title) {
+              errors.title = 'Required';
             }
-            if(!values.username){
-              errors.username = "Password is Required"
+            if(!values.singer){
+              errors.singer = "Password is Required"
             }
-            if(!values.password){
-              errors.password = "Password is Required"
+            if(!values.composer){
+              errors.composer = "Password is Required"
             }
+            
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
-              n("/passwords");
+              n("/my-music");
               setSubmitting(false);
             }, 400);
           }}
         >
           {({
             values,
-            errors,
-            touched,
             handleChange,
             handleBlur,
             handleSubmit,
@@ -56,43 +56,39 @@ const AddPassword = () => {
             <form onSubmit={handleSubmit}>
               <InputThemeProvider>
                 <StyledInput
-                  label="Application Name"
+                  label="Song Name"
                   name="appName"
                   placeholder="Enter Application Name"
                   autoComplete="off"
-                  value={values.appName}
+                  value={values.title}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  error={errors.appName !== ""}
-                  helpercolor={errors.appName && ColorPalette.red}
                 />
                 <StyledInput
-                  label="User Name"
+                  label="Singer Name"
                   name="username"
                   placeholder="Enter user name"
                   autoComplete="off"
-                  value={values.username}
+                  value={values.title}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   rows={4}
-                  error={errors.username !== ""}
-                  helpercolor={errors.username && ColorPalette.red}
                 />
                 <StyledInput
-                  label="Password"
+                  label="File"
+                  type="file"
                   name="password"
                   placeholder="Enter Password"
                   autoComplete="off"
-                  value={values.password}
+                  value={values.title}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   rows={4}
-                  error={errors.password !== ""}
-                  helpercolor={errors.password && ColorPalette.red}
                 />
+                <FileUpload />
               </InputThemeProvider>
-              {errors.password && touched.password && errors.password}
+              
               <AddTaskButton
                 type="submit"
                 disabled={isSubmitting}
@@ -108,4 +104,4 @@ const AddPassword = () => {
   );
 };
 
-export default AddPassword;
+export default AddMusic;

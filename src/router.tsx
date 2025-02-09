@@ -2,6 +2,7 @@ import { ReactElement, Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Loading } from "./components";
 import AddPassword from "./pages/AddPassword";
+import AddMusic from './pages/AddMusic';
 
 const Home = lazy(() => import("./pages/Home"));
 const TaskDetails = lazy(() => import("./pages/TaskDetails"));
@@ -22,6 +23,7 @@ const AppRouter = (): ReactElement => {
         <Route path="/share" element={<SharePage />} />
         <Route path="/add" element={<AddTask />} />
         <Route path="/add-password" element={<AddPassword/>}/>
+        <Route path="/my-music" element={<AddMusic/>}/>
         <Route path="/user" element={<UserProfile />} />
         <Route path="/transfer" element={<Transfer />} />
         <Route path="/categories" element={<Categories />} />

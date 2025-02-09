@@ -232,7 +232,7 @@ export const ProfileSidebar = () => {
           </StyledMenuItem>
         </MenuLink>
 
-        <MenuLink to="/add">
+        <MenuLink to="/my-music">
           <StyledMenuItem onClick={handleClose}>
             <AddRounded /> &nbsp; My Music
           </StyledMenuItem>
