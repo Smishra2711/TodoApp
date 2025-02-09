@@ -41,6 +41,18 @@ export interface Task {
   sharedBy?: string;
 }
 
+/**
+ * Represents a task in the application.
+ */
+export interface Password {
+  id: UUID;
+  website: string;
+  username: string;
+  password: string;
+  description?: string;
+  sharedBy?: string;
+}
+
 // export type Emoji = Omit<
 //   EmojiClickData,
 //   "activeSkinTone" | "names" | "unifiedWithoutSkinTone" | "getImageUrl"

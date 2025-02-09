@@ -212,14 +212,14 @@ export const ProfileSidebar = () => {
         >
           <Logo src={logo} alt="logo" />
           <LogoText>
-            <span>Todo</span> App
+            <span>Vault</span> App
             <span>.</span>
           </LogoText>
         </LogoContainer>
 
-        <MenuLink to="/">
+        <MenuLink to="/add-password">
           <StyledMenuItem onClick={handleClose}>
-            <TaskAltRounded /> &nbsp; Tasks
+            <TaskAltRounded /> &nbsp; Password
             {tasks.filter((task) => !task.done).length > 0 && (
               <Tooltip title={`${tasks.filter((task) => !task.done).length} tasks to do`}>
                 <MenuLabel>
@@ -234,7 +234,7 @@ export const ProfileSidebar = () => {
 
         <MenuLink to="/add">
           <StyledMenuItem onClick={handleClose}>
-            <AddRounded /> &nbsp; Add Task
+            <AddRounded /> &nbsp; My Music
           </StyledMenuItem>
         </MenuLink>
 
@@ -256,59 +256,7 @@ export const ProfileSidebar = () => {
           <StyledMenuItem onClick={handleClose}>
             <GetAppRounded /> &nbsp; Transfer
           </StyledMenuItem>
-        </MenuLink>
-
-        <StyledDivider />
-
-        <MenuLink to="https://github.com/maciekt07/TodoApp">
-          <StyledMenuItem translate="no">
-            <GitHub /> &nbsp; Github{" "}
-            {stars && (
-              <Tooltip title={`${stars} stars on Github`}>
-                <MenuLabel clr="#ff9d00">
-                  <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <StarRounded style={{ fontSize: "18px" }} />
-                    &nbsp;{stars}
-                  </span>
-                </MenuLabel>
-              </Tooltip>
-            )}
-          </StyledMenuItem>
-        </MenuLink>
-
-        <MenuLink to="https://github.com/maciekt07/TodoApp/issues/new">
-          <StyledMenuItem>
-            <BugReportRounded /> &nbsp; Report Issue{" "}
-            {Boolean(issuesCount || issuesCount === 0) && (
-              <Tooltip title={`${issuesCount} open issues`}>
-                <MenuLabel clr="#3bb61c">
-                  <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <AdjustRounded style={{ fontSize: "18px" }} />
-                    &nbsp;
-                    {issuesCount}
-                  </span>
-                </MenuLabel>
-              </Tooltip>
-            )}
-          </StyledMenuItem>
-        </MenuLink>
-
-        <MenuLink to="https://www.buymeacoffee.com/maciekt07">
-          <StyledMenuItem className="bmcMenu">
-            <BmcIcon className="bmc-icon" src={theme.darkmode ? bmcLogoLight : bmcLogo} /> &nbsp;
-            Buy me a coffee{" "}
-            {bmcSupporters && (
-              <Tooltip title={`${bmcSupporters} supporters on Buy me a coffee`}>
-                <MenuLabel clr="#f93c58">
-                  <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <FavoriteRounded style={{ fontSize: "16px" }} />
-                    &nbsp;{bmcSupporters}
-                  </span>
-                </MenuLabel>
-              </Tooltip>
-            )}
-          </StyledMenuItem>
-        </MenuLink>
+        </MenuLink>       
 
         <StyledDivider />
 
@@ -383,15 +331,13 @@ export const ProfileSidebar = () => {
 
           <CreditsContainer translate="no">
             <span style={{ display: "flex", alignItems: "center" }}>
-              Made with &nbsp;
-              <Favorite sx={{ fontSize: "14px" }} />
+              Powered by &nbsp;
             </span>
-            <span style={{ marginLeft: "6px", marginRight: "4px" }}>by</span>
             <a
               style={{ textDecoration: "none", color: "inherit" }}
-              href="https://github.com/maciekt07"
+              href="https://wmishra.com/"
             >
-              maciekt07
+              W Mishra
             </a>
           </CreditsContainer>
           <CreditsContainer>

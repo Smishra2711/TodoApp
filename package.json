@@ -1,8 +1,9 @@
 {
-  "name": "todoapp",
+  "name": "password_vault",
+  "version": "1.0.1",
   "author": {
-    "name": "Maciej Twaróg",
-    "url": "https://github.com/maciekt07"
+    "name": "W Mishra",
+    "url": "https://github.com/Smishra2711"
   },
   "private": true,
   "type": "module",
@@ -30,6 +31,8 @@
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
     "emoji-picker-react": "^4.11.1",
+    "firebase": "^11.3.0",
+    "formik": "^2.4.6",
     "lz-string": "^1.5.0",
     "ntc-ts": "^0.0.8",
     "react": "^18.3.1",
